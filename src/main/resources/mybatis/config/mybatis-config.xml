@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <typeAliases>
+        <package name="com.yukong.chapter4.entity"/>
+    </typeAliases>
+</configuration>
+
+        <!--作者：余空啊-->
+        <!--链接：https://www.jianshu.com/p/c44dc639cb93-->
+        <!--来源：简书-->
+        <!--简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。-->

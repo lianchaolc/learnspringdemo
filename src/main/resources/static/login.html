@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆人员信息</title>
+</head>
+<style>
+    <!--
+    编辑css-- >
+</style>
+<body style="margin-left: 100px">
+<div style=""></div>
+<h1 style="">输入用户信息页面</h1>
+<header style="width: 150px ;height: auto ; background-color: #00F7DE">用户信息录入页面</header>
+<div style="text-align: center ;width: 250px ;height: auto ;  margin-top: 20px;background-color: #00F7DE" >
+    <input type="text" id="username" type="hidden"/>人员姓名</input>
+    <input type="text" id="usertel" type="hidden"/>人员电话</input>
+    <input type="text" id="usertest" type="hidden"/>人员类型</input>
+    <input type="text" id="usertype" type="hidden"/>人员权限</input>
+</div>
+<button id="" style="height: 50px ;width: 100px ; margin-top: 40px" onclick="sureadduser()">提交</button>
+
+</button>
+
+
+<button id="userlogin" style="height: 50px ;width: 100px ;" onclick="useraction()" ;>跳转到主页面</button>
+</body>
+<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script>
+    //数据提交代码
+    function sureadduser() {
+        console.log("执行完成" + document.getElementById("username").toString().value);
+        console.log("执行完成！！！！！" + document.getElementById("username").toString().value);
+        console.log("执行完成！！！！！" + document.getElementById("usertel").toString().value);
+        console.log("执行完成！！！！！" + document.getElementById("usertest").toString().value);
+        console.log("执行完成！！！！！" + document.getElementById("usertype").toString().value);
+
+        if (document.getElementById("username").value == null) {
+            console.info("是null  不能提交")
+            return;
+        }
+        $.ajax({
+            url: "/addUser",
+            type: "POST",
+            dataType: "json",
+            data: {
+
+                "username": document.getElementById("username").value.toString(),
+                "usertel":  document.getElementById("usertel").value.toString(),
+                "usertest": document.getElementById("usertest").value.toString(),
+                "usertype": document.getElementById("usertype").value.toString(),
+            },
+            dataType: "json",
+            success: function (res) {
+                console.log("！！！！！" + document.getElementById("username").toString());
+                console.log("！！！！！" + document.getElementById("usertel").toString());
+                console.log("！！！！！" + document.getElementById("usertest").toString());
+
+            }
+
+        });
+
+    }
+     /// 点击页面没报错查看下F12后看代码
+    //     跳转主页面
+    function useraction() {
+        console.log("跳转新页面");
+        window.location.href = '/hello.html';
+    }
+</script>
+<script type="text/javascript" src="*****.js" charset="gbk"></script>
+</html>
+
