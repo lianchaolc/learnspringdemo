@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Created by Zhaohui on 2018/5/22.
- * 请求的数据是controller
+ * 请求的数据是controller1
  */
 @RestController
 public class UserController {
